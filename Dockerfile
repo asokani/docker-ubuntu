@@ -16,3 +16,5 @@ RUN adduser --disabled-password --gecos "" acme && \
     usermod -a -G www-user www-manage
 
 CMD ["/sbin/my_init"]
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
