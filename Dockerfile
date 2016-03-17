@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.9.18
-MAINTAINER Webmaster <webmaster@netfinity.cz>
+MAINTAINER Asokani "https://github.com/asokani"
 
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold" && \
   apt-get -y install git wget curl joe mysql-client php5-cli php5-mysql \
