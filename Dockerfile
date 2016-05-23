@@ -17,11 +17,10 @@ RUN adduser --disabled-password --gecos "" acme && \
 
 # startup scripts
 RUN mkdir -p /etc/my_init.d
-# copy ssh keys script
-RUN rm -f /etc/my_init/00_regen_ssh_host_keys.sh
+# regen or copy ssh keys script
+RUN rm -f /etc/my_init.d/00_regen_ssh_host_keys.sh
 RUN rm -f /etc/ssh_host_*
-ADD copy-ssh-keys.sh /etc/my_init/0-copy-ssh-keys.sh
-
+ADD gen_copy_ssh_host_keys.sh /etc/my_init.d/00-gen_copy_ssh_host_keys.sh
 
 CMD ["/sbin/my_init"]
 
