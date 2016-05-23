@@ -15,6 +15,14 @@ RUN adduser --disabled-password --gecos "" acme && \
     adduser --disabled-password --gecos "" www-user && \
     usermod -a -G www-user www-manage
 
+# startup scripts
+RUN mkdir -p /etc/my_init.d
+# copy ssh keys script
+RUN rm -f /etc/my_init/00_regen_ssh_host_keys.sh
+RUN rm -f /etc/ssh_host_*
+ADD copy-ssh-keys.sh /etc/my_init/0-copy-ssh-keys.sh
+
+
 CMD ["/sbin/my_init"]
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
