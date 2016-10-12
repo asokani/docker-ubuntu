@@ -2,7 +2,7 @@ FROM phusion/baseimage:0.9.18
 MAINTAINER Asokani "https://github.com/asokani"
 
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold" && \
-  apt-get -y install git wget curl joe mysql-client php5-cli php5-mysql \
+  apt-get -y install zip git wget curl joe mysql-client php5-cli php5-mysql \
 	php5-gd php5-imagick php5-tidy busybox openssl mc libmcrypt-dev \
 	libmysqlclient-dev graphicsmagick-libmagick-dev-compat libcurl4-openssl-dev libonig-dev \
 	build-essential python-software-properties \
