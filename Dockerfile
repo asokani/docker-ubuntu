@@ -8,7 +8,6 @@ RUN apt-get -y install zip git wget curl joe mysql-client php5-cli php5-mysql \
 	libmysqlclient-dev graphicsmagick-libmagick-dev-compat libcurl4-openssl-dev libonig-dev \
 	build-essential python-software-properties \
 	libssl-dev nodejs
-	
 
 # users acme 1000, www-manage 1001, www-user 1002
 RUN adduser --disabled-password --gecos "" acme && \   
